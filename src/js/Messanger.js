@@ -94,14 +94,11 @@ export default class Messanger {
       const { name, msg, dateTime } = JSON.parse(message.data);
 
       const itemMessage = document.createElement('li');
-      itemMessage.className = `
-        message
-        ${this.nameUser === name ? 'active' : ''}
-      `;
+      itemMessage.className = `message ${this.nameUser === name ? 'active' : ''}`;
 
       itemMessage.innerHTML = `
       <div class="message-name-date">
-        <span>${name}</span>
+        <span>You</span>
         <span>${printData(dateTime)}</span>
       </div>
       <div class="message">
@@ -111,10 +108,10 @@ export default class Messanger {
 
       this.messagesList.appendChild(itemMessage);
       this.messagesList.scrollTo(0, itemMessage.offsetTop);
-    } else if (type === 'add user') {
+    } else if (type === 'user logged in') {
       this.printUsers();
-    } else if (type === 'del user') {
-      console.log('del user!!!');
+    } else if (type === 'user logged out') {
+      console.log('user logged out');
       this.printUsers();
     }
   }

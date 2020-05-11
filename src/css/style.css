@@ -130,7 +130,7 @@ input {
 }
 
 .active > .message-name-date {
-  color: #ff0000;
+  color: #fe9788; 
 }
 
 .hidden {
