@@ -131,7 +131,7 @@ export default class Messanger {
         const jsonMsg = JSON.stringify(msg);
         this.ws.send(jsonMsg);
       } catch (e) {
-        console.log('err');
+        console.log('error');
         console.log(e);
       }
     } else {
